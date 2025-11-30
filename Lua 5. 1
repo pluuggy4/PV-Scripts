@@ -1,0 +1,15 @@
+-- Usage: Run in Lua 5.1
+local function d(s)
+    local z = luaZ:init(luaZ:make_getS(s), nil)
+    local p = luaY:parser(nil, z, nil, "=bc")
+    local w, b = {}, {}
+
+    w.set = function(_, x)
+        b[#b + 1] = x
+    end
+
+    luaU:dump(nil, p, w, b, 0)
+    return table.concat(b)
+end
+
+local tbc = d[[print("Succesfully found.") return]]
