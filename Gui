@@ -1,0 +1,105 @@
+<roblox version="4">  
+	<Item class="Script" referent="RBX0">  
+		<Folder name="LuauEngine">  
+			<Script name="Main">  
+				<![CDATA[
+
+-- Instances: 10 | Scripts: 0 | Modules: 0 | Tags: 0  
+local LMG2L = {}
+
+-- ScreenGui
+LMG2L.ScreenGui = Instance.new("ScreenGui")
+LMG2L.ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LMG2L.ScreenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+-- Frame
+LMG2L.Frame = Instance.new("Frame")
+LMG2L.Frame.BorderSizePixel = 0
+LMG2L.Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LMG2L.Frame.Size = UDim2.new(0, 530, 0, 286)
+LMG2L.Frame.Position = UDim2.new(0, 20, 0, -14)
+LMG2L.Frame.Parent = LMG2L.ScreenGui
+
+-- Título
+LMG2L.Title = Instance.new("TextLabel")
+LMG2L.Title.BorderSizePixel = 0
+LMG2L.Title.TextSize = 14
+LMG2L.Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LMG2L.Title.FontFace = Font.new("rbxasset://fonts/families/ComicNeueAngular.json")
+LMG2L.Title.Size = UDim2.new(0, 82, 0, 28)
+LMG2L.Title.Text = "project shkalifa"
+LMG2L.Title.Name = "TextLabel"
+LMG2L.Title.Position = UDim2.new(0, 6, 0, 2)
+LMG2L.Title.Parent = LMG2L.Frame
+
+-- Caja inferior
+LMG2L.Output = Instance.new("TextBox")
+LMG2L.Output.TextXAlignment = Enum.TextXAlignment.Left
+LMG2L.Output.BorderSizePixel = 0
+LMG2L.Output.TextEditable = false
+LMG2L.Output.TextSize = 14
+LMG2L.Output.TextColor3 = Color3.fromRGB(0, 0, 0)
+LMG2L.Output.TextYAlignment = Enum.TextYAlignment.Top
+LMG2L.Output.BackgroundColor3 = Color3.fromRGB(226, 226, 226)
+LMG2L.Output.FontFace = Font.new("rbxasset://fonts/families/ComicNeueAngular.json")
+LMG2L.Output.Size = UDim2.new(0, 420, 0, 52)
+LMG2L.Output.Position = UDim2.new(0, 14, 0, 212)
+LMG2L.Output.Parent = LMG2L.Frame
+
+-- Icono
+LMG2L.Icon = Instance.new("ImageLabel")
+LMG2L.Icon.BorderSizePixel = 0
+LMG2L.Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LMG2L.Icon.Size = UDim2.new(0, 32, 0, 30)
+LMG2L.Icon.Position = UDim2.new(0, 100, 0, 4)
+LMG2L.Icon.Parent = LMG2L.Frame
+
+-- Caja de código
+LMG2L.Input = Instance.new("TextBox")
+LMG2L.Input.TextXAlignment = Enum.TextXAlignment.Left
+LMG2L.Input.BorderSizePixel = 0
+LMG2L.Input.TextYAlignment = Enum.TextYAlignment.Top
+LMG2L.Input.BackgroundColor3 = Color3.fromRGB(233, 233, 233)
+LMG2L.Input.Size = UDim2.new(0, 408, 0, 160)
+LMG2L.Input.Position = UDim2.new(0, 10, 0, 32)
+LMG2L.Input.Text = "make by pv execute the code..."
+LMG2L.Input.Parent = LMG2L.Frame
+
+-- Botón EXE
+LMG2L.Execute = Instance.new("TextButton")
+LMG2L.Execute.BorderSizePixel = 0
+LMG2L.Execute.BackgroundColor3 = Color3.fromRGB(237, 237, 237)
+LMG2L.Execute.Size = UDim2.new(0, 88, 0, 80)
+LMG2L.Execute.Text = "EXE"
+LMG2L.Execute.Position = UDim2.new(0, 434, 0, 30)
+LMG2L.Execute.Parent = LMG2L.Frame
+
+-- Botón CLR
+LMG2L.Clear = Instance.new("TextButton")
+LMG2L.Clear.BorderSizePixel = 0
+LMG2L.Clear.BackgroundColor3 = Color3.fromRGB(239, 239, 239)
+LMG2L.Clear.Size = UDim2.new(0, 88, 0, 76)
+LMG2L.Clear.Text = "CLR"
+LMG2L.Clear.Position = UDim2.new(0, 434, 0, 120)
+LMG2L.Clear.Parent = LMG2L.Frame
+
+-- Botón X (cerrar)
+LMG2L.Exit = Instance.new("TextButton")
+LMG2L.Exit.BorderSizePixel = 0
+LMG2L.Exit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LMG2L.Exit.Size = UDim2.new(0, 28, 0, 26)
+LMG2L.Exit.Text = "X"
+LMG2L.Exit.Position = UDim2.new(0, 498, 0, 2)
+LMG2L.Exit.Parent = LMG2L.Frame
+
+-- Drag
+LMG2L.Drag = Instance.new("UIDragDetector")
+LMG2L.Drag.Parent = LMG2L.Frame
+
+return LMG2L.ScreenGui
+
+				]]>  
+			</Script>  
+		</Folder>  
+	</Item>  
+</roblox>
